@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'nl.maastrichtuniversity'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jUnitVersion = '5.8.2'
+}
+
+application {
+    mainClass = 'nl.maastrichtuniversity.supermarket.Simulation'
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${jUnitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
